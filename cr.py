@@ -1,7 +1,7 @@
 
-import xlwt
+import xlrd
 
-workbook = xlwt.Workbook()
+workbook = xlrd.Workbook()
 workbook.save('my_file.xls')
 
 sheet = workbook.add_sheet('Sheet_1')
@@ -12,14 +12,14 @@ row.write(1,'1st Row and 2nd Column')
 row.flush_row_data()
 sheet.col(0).width = 625 # In pixels
 
-style = xlwt.XFStyle()
+style = xlrd.XFStyle()
 
-font = xlwt.Font('Arial')
+font = xlrd.Font('Arial')
 style.font = font
 
-pattern = xlwt.Pattern()
-pattern.pattern = xlwt.Pattern.SOLID_PATTERN
-pattern.pattern_fore_colour = xlwt.Style.colour_map['red']
+pattern = xlrd.Pattern()
+pattern.pattern = xlrd.Pattern.SOLID_PATTERN
+pattern.pattern_fore_colour = xlrd.Style.colour_map['red']
 
 style.pattern = pattern
 
